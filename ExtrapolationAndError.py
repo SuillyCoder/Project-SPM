@@ -25,10 +25,10 @@ def main():
         except ValueError:
             print("Please enter a valid integer.")
 
-    # 2. Ask for X1..Xn and Y1..Yn
+    #  Ask for X1..Xn and Y1..Yn
     x_points = []
     y_points = []
-    # 2. Ask for X1..Xn
+    #  Ask for X1..Xn
     print("\nEnter the x-values:")
     for i in range(n):
         while True:
@@ -38,7 +38,7 @@ def main():
                 break
             except ValueError:
                 print("Please enter a valid number.")
-       # 2. Ask for Y1..Yn
+       #  Ask for Y1..Yn
     print("\nEnter the y-values:")
     for i in range(n):
         while True:
