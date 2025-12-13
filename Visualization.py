@@ -3,7 +3,7 @@
 # or brew install python-tk@3.13
 
 import tkinter as tk
-from matplotlib import pyplot as plt
+#rom matplotlib import pyplot as plt
 
 root = tk.Tk()
 root.geometry("800x500")
