@@ -12,9 +12,10 @@ def lagrange_interpolation(x_points, y_points, x):
 
     return total
 #formula for relative error
+TRUE_VALUE = 5.0  # fixed true value
 def relative_error(true_value, approx_value):
     # |true - approx| / |true|
-    return abs(true_value - approx_value) / abs(true_value)
+    return abs(true_value - approx_value) / abs(approx_value)
 
 def main():
     # Ask how many data points
@@ -42,9 +43,17 @@ def main():
                 break
             except ValueError:
                 print("Please enter a valid number.")
+    #  Calculate Relative Error and Accuracy of Each Shot
 
-    TRUE_VALUE = 5.0  # fixed true value
-    #  Compute and print result
+    for k in range(n):
+        x_test = k + 1  # 1..n
+        print(f"\n--- Test Case: Estimating P({x_test}) ---")
+        approx = lagrange_interpolation(x_points, y_points, x_test)
+        print(f"Estimated value P({x_test}) = {approx}")
+
+        rel_err = relative_error(TRUE_VALUE, approx)
+        print(f"Relative error at x = {x_test}: {rel_err}")
+        
     # Test cases for x = 6,7,8,9,10
     for j in range(5):
         x_test = 5 + (j + 1)  # 6..10
@@ -58,5 +67,3 @@ def main():
 if __name__ == "__main__":
     main()
 #me cedric is not goat anymore huhuhu :(
-
-#Testing tsting
