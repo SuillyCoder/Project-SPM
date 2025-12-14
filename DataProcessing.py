@@ -22,11 +22,13 @@ def read_csv_columns(filename):
 
     return col1, col2
 
-filename = input("Enter CSV file path [i.e 'c:/Users/Book1.csv']: ").strip()
+# Only run this code if the file is executed directly, not when imported
+if __name__ == "__main__":
+    filename = input("Enter CSV file path [i.e 'c:/Users/Book1.csv']: ").strip()
 
-if not os.path.isfile(filename):
-    print("Error: File does not exist")
-else:
-    array1, array2 = read_csv_columns(filename)
-    print("x:", array1)
-    print("f(x):", array2)
+    if not os.path.isfile(filename):
+        print("Error: File does not exist")
+    else:
+        array1, array2 = read_csv_columns(filename)
+        print("x:", array1)
+        print("f(x):", array2)
