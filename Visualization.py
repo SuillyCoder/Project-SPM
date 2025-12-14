@@ -82,7 +82,7 @@ def validate_csv(file_path):
             reader = csv.reader(file)
             rows = list(reader)
             
-            if len(rows) == 0:
+            if len(rows) == 0 or all(all(cell.strip() == ' ' for cell in row) for row in rows):
                 return False, "Empty CSV File. Cannot be used!"
             
             # Check if first row is header
