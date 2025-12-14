@@ -1,6 +1,11 @@
+#Filename: DataProcessing.py
+#Author: Esler, Rafiq Reos M.
+
+# ============= IMPORT NECESSARY  LIIBRRARIES ==============
 import csv
 import os
 
+# ============= READING COLUMNS FROM CSV ==============
 def read_csv_columns(filename):
     col1 = []
     col2 = []
@@ -22,7 +27,7 @@ def read_csv_columns(filename):
 
     return col1, col2
 
-# Only run this code if the file is executed directly, not when imported
+# ========== CODE TO RUN IF *THIS* FILE IS EXECUTED DIRECTLY, NOT WHEN IMPORTED ========
 if __name__ == "__main__":
     filename = input("Enter CSV file path [i.e 'c:/Users/Book1.csv']: ").strip()
 

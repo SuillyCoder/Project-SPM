@@ -1,8 +1,10 @@
-# STANDARD LAGRANGE FORMULA (BY CEDRIC)
+#Filename: ExtrapolationAndError.py
+#Author: Quiel, Cedric Nichole
+
 def lagrange_interpolation(x_points, y_points, x):
     n = len(x_points)
     total = 0.0
- #Summation of Y[i] and Lagrange Big Pi Multiplication
+ # =====Summation of Y[i] and Lagrange Big Pi Multiplication =====
     for i in range(n):
         Li = 1.0
         for j in range(n):
@@ -11,14 +13,14 @@ def lagrange_interpolation(x_points, y_points, x):
         total += y_points[i] * Li
 
     return total
-#formula for relative error
+# ===== Formula for relative error =====
 TRUE_VALUE = 5.0  # fixed true value
 def relative_error(true_value, approx_value):
     # |true - approx| / |true|
     return abs(true_value - approx_value) / abs(approx_value)
 
 def main():
-    # Ask how many data points
+    #  ===== Ask how many data points =====
     while True:
         try:
             n = int(input("How many data points (2-5)? "))
@@ -29,10 +31,10 @@ def main():
         except ValueError:
             print("Please enter a valid integer.")
 
-    # X points: 1,2,...,n
+    # ===== X points: 1,2,...,n =====
     x_points = list(range(1, n + 1))
 
-    # Y points from user
+    # ===== Y points from user =====
     y_points = []
     print("\nEnter the y-values:")
     for i in range(n):
@@ -43,7 +45,7 @@ def main():
                 break
             except ValueError:
                 print("Please enter a valid number.")
-    #  Calculate Relative Error and Accuracy of Each Shot
+    # =====  Calculate Relative Error and Accuracy of Each Shot =====
 
     for k in range(n):
         x_test = k + 1  # 1..n
@@ -57,7 +59,7 @@ def main():
         accuracy = (1 - rel_err) * 100
         print(f"Accuracy at x = {x_test}: {round(accuracy,3)}%")
 
-    # Test cases for x = 6,7,8,9,10
+    # ===== Test cases for x = 6,7,8,9,10 =====
     for j in range(5):
         x_test = 5 + (j + 1)  # 6..10
         print(f"\n--- Test Case: Estimating P({x_test}) ---")
@@ -71,6 +73,8 @@ def main():
         rel_err = relative_error(TRUE_VALUE, approx)
         print(f"Relative error at x = {x_test}: {rel_err}")
 
+# ========== PROC IF *THIS* FILE IS EXECUTED DIRECTLY, NOT WHEN IMPORTED ========
+
 if __name__ == "__main__":
     main()
-#me cedric is not goat anymore huhuhu :(
+
