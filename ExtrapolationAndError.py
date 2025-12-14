@@ -52,14 +52,21 @@ def main():
         print(f"Estimated value P({x_test}) = {approx}")
 
         rel_err = relative_error(TRUE_VALUE, approx)
-        print(f"Relative error at x = {x_test}: {rel_err}")
-        
+        print(f"Relative error at x = {x_test}: {round(rel_err,3)}")
+
+        accuracy = (1 - rel_err) * 100
+        print(f"Accuracy at x = {x_test}: {round(accuracy,3)}%")
+
     # Test cases for x = 6,7,8,9,10
     for j in range(5):
         x_test = 5 + (j + 1)  # 6..10
         print(f"\n--- Test Case: Estimating P({x_test}) ---")
         approx = lagrange_interpolation(x_points, y_points, x_test)
-        print(f"Estimated value P({x_test}) = {approx}")
+        print(f"Estimated value P({x_test}) = {round(approx,3)}")
+        if (approx > 5):
+            approx = 10 - approx
+            print(f"Manipulated value is: {round(approx,3)}")
+            continue
 
         rel_err = relative_error(TRUE_VALUE, approx)
         print(f"Relative error at x = {x_test}: {rel_err}")
