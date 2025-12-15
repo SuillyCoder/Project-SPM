@@ -40,7 +40,7 @@ def main():
     for i in range(n):
         while True:
             try:
-                y_val = float(input(f"Y{i+1}: "))
+                y_val = float(input(f"Y{i}: "))
                 y_points.append(y_val)
                 break
             except ValueError:
